@@ -1,0 +1,9 @@
+<h1>Show Thread</h1>
+
+<strong>Title:</strong>
+<%= @my_thread.title %>
+<strong>OverView:</strong>
+<%= @my_thread.overview %>
+<%= link_to 'Edit', edit_my_thread_path(@my_thread) %>
+<td><%= link_to 'Delete', my_thread_url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<%= link_to 'Back', my_threads_path %>

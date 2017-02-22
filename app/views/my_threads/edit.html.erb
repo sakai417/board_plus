@@ -1,0 +1,8 @@
+<h1>Edit</h1>
+<strong>Title:</strong>
+<%= @my_thread.title %>
+<strong>OverView:</strong>
+<%= @my_thread.overview %>
+
+<%= render 'form', my_thread:@my_thread %>
+<%= link_to 'Back', my_threads_path %>
