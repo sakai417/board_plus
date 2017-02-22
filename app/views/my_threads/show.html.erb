@@ -5,5 +5,6 @@
 <strong>OverView:</strong>
 <%= @my_thread.overview %>
 <%= link_to 'Edit', edit_my_thread_path(@my_thread) %>
-<td><%= link_to 'Delete', my_thread_url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<%= link_to 'Delete', my_thread_url, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'コメント作成', new_my_thread_comment_path(@my_thread) %>
 <%= link_to 'Back', my_threads_path %>
