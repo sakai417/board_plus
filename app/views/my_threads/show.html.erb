@@ -2,9 +2,28 @@
 
 <strong>Title:</strong>
 <%= @my_thread.title %>
+<br>
 <strong>OverView:</strong>
 <%= @my_thread.overview %>
+<br>
 <%= link_to 'Edit', edit_my_thread_path(@my_thread) %>
+<br>
 <%= link_to 'Delete', my_thread_url, method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>
+<h2>コメント一覧</h2>
+<strong>コメント:</strong>
+
+<% @comments.each do |comment| %>
+<%= comment.content %>
+<br>
+<%= link_to 'Edit', edit_comment_path(comment) %>
+<br>
+<%= link_to 'Delete', comment_url(comment), method: :delete, data: { confirm: 'Are you sure?'} %>
+
+<%end %>
+<br>
+<br>
+
 <%= link_to 'コメント作成', new_my_thread_comment_path(@my_thread) %>
+<br>
 <%= link_to 'Back', my_threads_path %>

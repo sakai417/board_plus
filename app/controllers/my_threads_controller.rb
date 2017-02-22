@@ -21,6 +21,7 @@ class MyThreadsController < ApplicationController
       end
     end
     def show
+      @comments = Comment.where(my_thread_id: params[:id])
     end
 
     def edit
