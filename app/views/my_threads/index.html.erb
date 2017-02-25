@@ -1,6 +1,4 @@
-
-<h1>My Threads</h1>
-<h1><%= current_user.id %></h1>
+<h1><%= current_user.id %>さんのマイページ</h1>
 
 <table>
   <thead>
@@ -19,14 +17,15 @@
         <!-- my_thread_pathとせずにmy_threadと変数を渡すだけで良い。 -->
         <!-- my_thread_path(my_thread)と丁寧に描いても良い。 -->
         <td><%= link_to 'Show', my_thread_path(my_thread) %></td>
+
+  
         <td><%= link_to 'Edit', edit_my_thread_path(my_thread) %></td>
         <td><%= link_to 'Delete', my_thread, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
 <%= link_to 'New My Thread', new_my_thread_path %>
+<br>
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
