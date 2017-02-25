@@ -11,17 +11,16 @@
 <%= link_to 'Delete', my_thread_url, method: :delete, data: { confirm: 'Are you sure?' } %>
 <br>
 <h2>コメント一覧</h2>
-<strong>コメント:</strong>
-
 <% @comments.each do |comment| %>
+<strong>コメント:</strong>
 <%= comment.content %>
 <br>
 <%= link_to 'Edit', edit_comment_path(comment) %>
 <br>
 <%= link_to 'Delete', comment_url(comment), method: :delete, data: { confirm: 'Are you sure?'} %>
+<br>
 
 <%end %>
-<br>
 <br>
 
 <%= link_to 'コメント作成', new_my_thread_comment_path(@my_thread) %>
