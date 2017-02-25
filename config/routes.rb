@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :new, :create]
   end
   resources :comments, only: [:show, :edit, :update, :destroy]
+  root to: "my_threads#index"
 end
