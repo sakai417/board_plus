@@ -28,8 +28,12 @@ class MyThreadsController < ApplicationController
     end
 
     def update
-      @my_thread.update(my_thread_params)
-      redirect_to my_thread_path(@my_thread)
+      if @my_thread.update(my_thread_params)
+        redirect_to my_thread_path(@my_thread)
+      else
+        render 'edit'
+      end
+
     end
 
     def destroy
