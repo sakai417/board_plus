@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
@@ -41,18 +40,19 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rubocop', require: false
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'pry-byebug', '~> 3.3.0' # デバッグを実施(Ruby 2.0以降で動作する)
+  gem 'pry-doc', '~> 0.8.0'    # methodを表示
+  gem 'pry-rails', '~> 0.3.4'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
+  gem 'pry-stack_explorer', '~> 0.4.9.2' # スタックをたどれる
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'pry-rails', '~> 0.3.4'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
-  gem 'pry-doc', '~> 0.8.0'    # methodを表示
-  gem 'pry-byebug', '~> 3.3.0' # デバッグを実施(Ruby 2.0以降で動作する)
-  gem 'pry-stack_explorer', '~> 0.4.9.2' # スタックをたどれる
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
