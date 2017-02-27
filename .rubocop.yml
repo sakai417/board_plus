@@ -1,6 +1,14 @@
 LineLength:
-      Max: 120
+      Max: 154
 Style/Documentation:
       Enabled: false
 Metrics/LineLength:
       Enabled: false
+AsciiComments:
+      Enabled: false
+MethodLength:
+      Max: 15
+ClassAndModuleChildren:
+      EnforcedStyle: nested
+Metrics/BlockLength:
+      Max: 31

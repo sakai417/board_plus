@@ -48,4 +48,4 @@ class MyThreadsController < ApplicationController
   def set_my_thread
     @my_thread = MyThread.find(params[:id])
   end
-  end
+end
